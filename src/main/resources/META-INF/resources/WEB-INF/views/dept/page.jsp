@@ -17,9 +17,11 @@
 
 </head>
 <body>
+<c:set var="depts" value="${page.depts}"/>
+<c:set var="paging" value="${page.paging}"/>
 
-<h1>Dept Page List PageNo ? ${page.paging.pageNo}</h1>
-<c:forEach var="dept" items="${page.depts}" varStatus="status">
+<h1>Dept Page List PageNo ? ${paging.pageNo}</h1>
+<c:forEach var="dept" items="${depts}" varStatus="status">
 	${dept.deptno}, ${dept.dname}, ${dept.loc} <br>
 </c:forEach>
 

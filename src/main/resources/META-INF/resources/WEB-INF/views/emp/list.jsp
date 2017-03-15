@@ -17,6 +17,11 @@
 
 </head>
 <body>
-
+<h1>Emp List</h1>
+<ol>
+<c:forEach var="emp" items="${emps}">
+	<li>${emp.empno}, ${emp.ename}, ${emp.job}, ${emp.mgr}, ${emp.hiredate}, ${emp.sal}, ${emp.comm}, ${emp.deptno}</li>
+</c:forEach>
+</ol>
 </body>
 </html>

@@ -7,18 +7,23 @@
 <html>
 <head>
 <meta charset=UTF-8>
-<title>list.jsp</title>
-<!-- code_assist -->
-<c:if test="false">
-<link rel="stylesheet" href="../code_assist/animate.css">
-<link rel="stylesheet" href="../code_assist/bootstrap.css">
-</c:if>
+<title>item.jsp</title>
+
 </head>
 <body>
+${error}<br>
 
-<c:forEach var="country" items="${list}">
-	${country.code} ${country.name} ${country.population} <br>
+${country.code} ${country.name} ${country.population}<br>
+<hr>
+
+<ol>
+<c:forEach var="city" items="${country.citys}">
+	<li>${city.id}, ${city.name}, ${city.population}</li>
 </c:forEach>
+</ol>
+
+<hr>
+${country}
 
 </body>
 </html>

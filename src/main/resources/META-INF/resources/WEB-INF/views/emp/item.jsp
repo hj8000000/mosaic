@@ -21,5 +21,7 @@
 ${emp}
 <hr>
 ${emp.dept}
+<hr>
+<a href="/emp/page/${param.pageNo}">목록으로</a>
 </body>
 </html>
