@@ -22,8 +22,23 @@
 <link rel="stylesheet" href="../views/code_assist/bootstrap.css">
 </c:if>
 
+<style>
+	tr, td {
+		text-transform: capitalize;
+	}
+	.text {
+		width : 90%;
+		margin : auto;
+		white-space : nowrap;
+		text-overflow : ellipsis;
+	}
+</style>
+
 <sitemesh:write property="head"/>
+
 </head>
+
+
 <body>
 
 <nav class="navbar navbar-inverse">
@@ -66,8 +81,9 @@
 			</div>
 		</div>
 	</nav>
-
-	<sitemesh:write property="body"/>
+	<div class="text">
+		<sitemesh:write property="body"/>
+	</div>
 
 
 

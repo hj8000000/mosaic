@@ -19,7 +19,15 @@
 	a:HOVER {
 		text-decoration: none;	
 	}
-	
+	a {
+		color: black;
+	}
+	header {
+		margin: 50px 10px;
+	}
+	.text-center {
+		margin : 30px auto;
+	}
 </style>
 
 </head>
@@ -29,11 +37,11 @@
 <c:set var="paging" value="${page.paging}"/>
 
 <header>
-	<h1>Country Page List pageNo ? [ ${paging.pageNo} ] </h1>
+	<h3> - Country Page List pageNo ? [ ${paging.pageNo} ] </h3>
 </header>
 
 
-<div>
+<div class="text-center table-responsive">
 	<table class="table table-hover">
 		<tr class="success">
 			<td>No.</td>
@@ -56,7 +64,8 @@
 	<c:forEach var="c" items="${countrys}" varStatus="status">
 		<tr>
 			<td><b>${status.index + 1}</b></td>
-			<td>${c.code}</td> <td><a href="/country/item/${c.code}">${c.name}</a></td>
+			<td>${c.code}</td> 
+			<td><a href="/country/item/${c.code}">${c.name}</a></td>
 			<td>${c.continent}</td>
 			<td>${c.region}</td>
 			<td>${c.surfaceArea}</td>
@@ -69,48 +78,55 @@
 			<td>${c.governmentForm}</td> 
 			<td>${c.headOfState}</td> 
 			<td>${c.capital}</td> 
-			<td>${c.code2}</td></tr> 
+			<td>${c.code2}</td>
+		</tr> 
 	</c:forEach>
 	</table>
 </div>
 
+
+
+<div class="text-center">
+	<a href="/country/page/1">처음으로</a>
+	
+	<c:choose>
+	<c:when test="${paging.firstGroup == true}">
+		<a href="/country/page/${paging.firstPage}" class="alert alert-info">&laquo;</a>
+	</c:when>
+	<c:when test="${paging.firstGroup == false}">
+		<a href="/country/page/${paging.firstPage - 1}" class="alert alert-info">&laquo;</a>
+	</c:when>
+	</c:choose>
+	
+	<c:forEach var="i" begin="${paging.firstPage}" end="${paging.lastPage}">
+		<a href="/country/page/${i}" class="xxx btn btn-group-sm active">${i}</a>
+	</c:forEach>
+	
+	<c:choose>
+	<c:when test="${paging.lastGroup == true}">
+		<a href="/country/page/${paging.lastPage}" class="alert alert-success">&raquo;</a>
+	</c:when>
+	<c:when test="${paging.lastGroup == false}">
+		<a href="/country/page/${paging.lastPage + 1}" class="alert alert-success">&raquo;</a>
+	</c:when>
+	</c:choose>
+	
+	<a href="/country/page/${paging.totalPage}">끝으로</a>
+</div>
+
 <hr>
 
-<c:choose>
-<c:when test="${paging.firstGroup == true}">
-	<a href="/country/page/${paging.firstPage}" class="alert alert-info">&laquo;</a>
-</c:when>
-<c:when test="${paging.firstGroup == false}">
-	<a href="/country/page/${paging.firstPage - 1}" class="alert alert-info">&laquo;</a>
-</c:when>
-</c:choose>
+<!-- <footer> -->
+<!-- <button onclick="displayBox(event)" class="btn btn-default animated fadeIn"> -->
+<%-- ${paging} --%>
+<!-- </button> -->
+<!-- </footer> -->
 
-<c:forEach var="i" begin="${paging.firstPage}" end="${paging.lastPage}">
-	<a href="/country/page/${i}" class="xxx btn btn-group-sm active">${i}</a>
-</c:forEach>
-
-<c:choose>
-<c:when test="${paging.lastGroup == true}">
-	<a href="/country/page/${paging.lastPage}" class="alert alert-success">&raquo;</a>
-</c:when>
-<c:when test="${paging.lastGroup == false}">
-	<a href="/country/page/${paging.lastPage + 1}" class="alert alert-success">&raquo;</a>
-</c:when>
-</c:choose>
-
-
-<hr>
-<footer>
-<button onclick="displayBox(event)" class="btn btn-default animated fadeIn">
-${paging}
-</button>
-</footer>
-
-<script type="text/javascript">
-	function displayBox(event) {
-		$('.btn-default').toggleClass('btn-primary')
-	}
-</script>
+<!-- <script type="text/javascript"> -->
+<!--  	function displayBox(event) { -->
+<!-- 		$('.btn-default').toggleClass('btn-primary') -->
+<!--  	} -->
+<!-- </script> -->
 
 </body>
 </html>

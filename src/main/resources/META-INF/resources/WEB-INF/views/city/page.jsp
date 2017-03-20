@@ -15,6 +15,18 @@
 <link rel="stylesheet" href="../code_assist/bootstrap.css">
 </c:if>
 
+<style type="text/css">
+	a:HOVER {
+		text-decoration: none;	
+	}
+	a {
+		color: black;
+	}
+	.text-center {
+		margin : 30px auto;
+	}
+</style>
+
 </head>
 <body>
 
@@ -22,13 +34,30 @@
 <c:set var="paging" value="${page.paging}"/>
 
 <h1>City Page pageNo=${paging.pageNo}</h1>
-<ol class="list-group">
+
+<div class="text-center table-responsive">
+	<table class="table">
+		<tr class="warning">
+			<td>ID</td>
+			<td>name</td>
+			<td>country_code</td>
+			<td>district</td>
+			<td>population</td>
 	<c:forEach var="city" items="${citys}">
-		<li class="list-group-item-info animated zoomIn">${city.id}, <a href="/city/item/${city.id}?pageNo=${paging.pageNo}">${city.name}</a>, ${city.countryCode}, ${city.district}, ${city.population}</li>
-	</c:forEach>
-</ol>
+		<tr>
+			<td>${city.id}</td> 
+			<td><a href="/city/item/${city.id}?pageNo=${paging.pageNo}">${city.name}</a></td> 
+			<td>${city.countryCode}</td>
+			<td>${city.district}</td>
+			<td>${city.population}</td>
+		</tr>
+		</c:forEach>
+	</table>
+</div>
+
 <hr class="animated bounce">
 
+<div class="text-center">
 <a href="/city/page/1">처음으로</a>
 
 <c:choose>
@@ -53,6 +82,7 @@
 </c:choose>
 
 <a href="/city/page/${paging.totalPage}">끝으로</a>
+</div>
 
 </body>
 </html>
