@@ -1,4 +1,7 @@
 
+select * from dept where deptno = '50';
+delete from dept where deptno = '50';
+
 select * from city where country_code = 'KOR';
 
 select max(id) from city;

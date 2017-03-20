@@ -40,7 +40,7 @@ public class CityFormTests {
 	@Test
 	public void test02_getCountryCode() {
 		CityForm cityForm =  new CityForm();
-		cityForm.setName("java");
+//		cityForm.setName("java");
 		cityForm.setCountryCode("KOREA");
 		cityForm.setDistrict("xxxxxxx");
 		

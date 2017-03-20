@@ -22,7 +22,8 @@ public class CityForm extends City {
 
 	@Override
 	public void setName(String name) {
-		// TODO Auto-generated method stub
+		if (name.equals(""))
+			name = null;
 		super.setName(name);
 	}
 	
@@ -35,7 +36,8 @@ public class CityForm extends City {
 
 	@Override
 	public void setCountryCode(String countryCode) {
-		// TODO Auto-generated method stub
+		if (countryCode.equals(""))
+			countryCode = null;
 		super.setCountryCode(countryCode);
 	}
 	
@@ -48,7 +50,8 @@ public class CityForm extends City {
 
 	@Override
 	public void setDistrict(String district) {
-		// TODO Auto-generated method stub
+		if (district.equals(""))
+			district = null;
 		super.setDistrict(district);
 	}
 	

@@ -1,4 +1,4 @@
-package com.example.emp.service;
+package com.example.country.service;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,28 +9,28 @@ import org.springframework.validation.BeanPropertyBindingResult;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.Validator;
 
-import com.example.form.EmpForm;
+import com.example.form.CountryForm;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class EmpRegisterServiceTests {
+public class CountryRegisterServiceTests {
 	
 	@Autowired
-	EmpSearchService empSearchService;
+	CountrySearchService countrySerchservice;
 	
 	@Autowired
-	EmpRegisterService empRegisterService;
+	CountryRegisterService countryRegisterService;
 	
 	@Autowired
 	Validator validator;
 	
 	@Test
 	public void test00_confirmS_Service() {
-		System.out.println("Sservice = " + empSearchService);
+		System.out.println("Sservice =" + countrySerchservice);
 	}
 	@Test
 	public void test00_confirmR_Service() {
-		System.out.println("Rservice = " + empRegisterService);
+		System.out.println("Rservice =" + countryRegisterService);
 	}
 	@Test
 	public void test00_confirmValidator() {
@@ -39,23 +39,24 @@ public class EmpRegisterServiceTests {
 	
 	@Test
 	public void test01_register() {
-		EmpForm empForm = new EmpForm();
-		BindingResult errors = new BeanPropertyBindingResult(empForm, "empForm");
 		
-//		empForm.setDeptno(50);
-//		empForm.setEname("SCSC");
+		CountryForm countryForm = new CountryForm();
+		BindingResult errors = new BeanPropertyBindingResult(countryForm, "countryForm");
 		
-		validator.validate(empForm, errors);
+		countryForm.setCode("XYZ");
+		countryForm.setName("java");
+		
+		validator.validate(countryForm, errors);
 		if (errors.hasErrors()) {
-			System.out.println("errors = " + errors);
+			System.out.println(errors);
 			return;
 		}
-		empRegisterService.register(empForm, errors);
+		countryRegisterService.register(countryForm, errors);
 		if (errors.hasErrors()) {
-			System.out.println("errors = " + errors);
+			System.out.println(errors);
 			return;
 		}
 		
-		System.out.println("emp = " + empSearchService.getEmpByEmpno(empForm.getEmpno()));
+		System.out.println("country = " + countrySerchservice.getCountryByCode(countryForm.getCode()));
 	}
 }

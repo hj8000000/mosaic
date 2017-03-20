@@ -66,9 +66,9 @@
 			</div>
 		</div>
 	</nav>
-<div class="container text-center">
+
 	<sitemesh:write property="body"/>
-</div>
+
 
 
 </body>
