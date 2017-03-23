@@ -23,8 +23,18 @@
 		color: black;
 	}
 	.text-center {
-		margin : 30px auto;
+		margin :30px auto;
+		white-space : nowrap;
+		text-overflow : ellipsis;
 	}
+	tr, td {
+		text-transform: capitalize;
+	}
+	.headTR {
+		background-color: black;
+		color: gold;
+	}
+
 </style>
 
 </head>
@@ -35,14 +45,20 @@
 
 <h1>City Page pageNo=${paging.pageNo}</h1>
 
+
+<a href="/city/register" class="btn btn-success btn-sm">
+<span class="glyphicon glyphicon-inbox"></span> City Register</a>
+
+
 <div class="text-center table-responsive">
 	<table class="table">
-		<tr class="warning">
-			<td>ID</td>
+		<tr class="headTR">
+			<td>id</td>
 			<td>name</td>
 			<td>country_code</td>
 			<td>district</td>
 			<td>population</td>
+		</tr>
 	<c:forEach var="city" items="${citys}">
 		<tr>
 			<td>${city.id}</td> 
@@ -62,22 +78,22 @@
 
 <c:choose>
 <c:when test="${paging.firstGroup == true}">
-	<a href="/city/page/${paging.firstPage}" class="alert alert-info">&laquo;</a>
+	<a href="/city/page/${paging.firstPage}" class="btn btn-warning btn-sm">&laquo;</a>
 </c:when>
 <c:when test="${paging.firstGroup == false}">
-	<a href="/city/page/${paging.firstPage - 1}" class="alert alert-info">&laquo;</a>
+	<a href="/city/page/${paging.firstPage - 1}" class="btn btn-warning btn-sm">&laquo;</a>
 </c:when>
 </c:choose>
 <c:forEach var="i" begin="${paging.firstPage}" end="${paging.lastPage}">
-	<a href="/city/page/${i}">${i}</a>
+	<a href="/city/page/${i}" class="btn btn-group-sm active">${i}</a>
 </c:forEach>
 
 <c:choose>
 <c:when test="${paging.lastGroup == true}">
-	<a href="/city/page/${paging.lastPage}"class="alert alert-info">&raquo;</a>
+	<a href="/city/page/${paging.lastPage}"class="btn btn-warning btn-sm">&raquo;</a>
 </c:when>
 <c:when test="${paging.lastGroup == false}">
-	<a href="/city/page/${paging.lastPage + 1}"class="alert alert-info">&raquo;</a>
+	<a href="/city/page/${paging.lastPage + 1}"class="btn btn-warning btn-sm">&raquo;</a>
 </c:when>
 </c:choose>
 

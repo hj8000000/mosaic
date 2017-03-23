@@ -18,5 +18,23 @@
 </head>
 <body>
 <h1>City 등록 성공입니다.</h1>
+<div class="text-center table-responsive">
+<table class="table table-bordered">
+	<tr class="danger">
+		<td>id</td>
+		<td>name</td>
+		<td>countryCode</td>
+		<td>district</td>
+		<td>population</td>
+	</tr>
+	<tr>
+		<td>${city.id}</td>
+		<td>${city.name}</td>
+		<td>${city.countryCode == null ? 'null' : city.countryCode}</td>
+		<td>${city.district == null ? 'null' : city.district}</td>
+		<td>${city.population == null ? 'null' : city.population}</td>
+	</tr>
+</table>
+</div>
 </body>
 </html>

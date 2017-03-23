@@ -26,7 +26,16 @@
 		margin: 50px 10px;
 	}
 	.text-center {
-		margin : 30px auto;
+		margin :30px auto;
+		white-space : nowrap;
+		text-overflow : ellipsis;
+	}
+	tr, td {
+		text-transform: capitalize;
+	}
+	.headTR {
+		background-color: black;
+		color: gold;
 	}
 </style>
 
@@ -43,7 +52,7 @@
 
 <div class="text-center table-responsive">
 	<table class="table table-hover">
-		<tr class="success">
+		<tr class="headTR">
 			<td>No.</td>
 			<td>code</td>
 			<td>name</td>
@@ -65,7 +74,7 @@
 		<tr>
 			<td><b>${status.index + 1}</b></td>
 			<td>${c.code}</td> 
-			<td><a href="/country/item/${c.code}">${c.name}</a></td>
+			<td><a href="/country/item/${c.code}?pageNo=${paging.pageNo}">${c.name}</a></td>
 			<td>${c.continent}</td>
 			<td>${c.region}</td>
 			<td>${c.surfaceArea}</td>
@@ -91,23 +100,23 @@
 	
 	<c:choose>
 	<c:when test="${paging.firstGroup == true}">
-		<a href="/country/page/${paging.firstPage}" class="alert alert-info">&laquo;</a>
+		<a href="/country/page/${paging.firstPage}" class="btn btn-warning btn-sm">&laquo;</a>
 	</c:when>
 	<c:when test="${paging.firstGroup == false}">
-		<a href="/country/page/${paging.firstPage - 1}" class="alert alert-info">&laquo;</a>
+		<a href="/country/page/${paging.firstPage - 1}" class="btn btn-warning btn-sm">&laquo;</a>
 	</c:when>
 	</c:choose>
 	
 	<c:forEach var="i" begin="${paging.firstPage}" end="${paging.lastPage}">
-		<a href="/country/page/${i}" class="xxx btn btn-group-sm active">${i}</a>
+		<a href="/country/page/${i}" class="btn btn-group-sm active">${i}</a>
 	</c:forEach>
 	
 	<c:choose>
 	<c:when test="${paging.lastGroup == true}">
-		<a href="/country/page/${paging.lastPage}" class="alert alert-success">&raquo;</a>
+		<a href="/country/page/${paging.lastPage}" class="btn btn-warning btn-sm">&raquo;</a>
 	</c:when>
 	<c:when test="${paging.lastGroup == false}">
-		<a href="/country/page/${paging.lastPage + 1}" class="alert alert-success">&raquo;</a>
+		<a href="/country/page/${paging.lastPage + 1}" class="btn btn-warning btn-sm">&raquo;</a>
 	</c:when>
 	</c:choose>
 	

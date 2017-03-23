@@ -64,7 +64,8 @@ public class CityForm extends City {
 
 	@Override
 	public void setPopulation(BigDecimal population) {
-		// TODO Auto-generated method stub
+		if (population.equals(""))
+			population = null;
 		super.setPopulation(population);
 	}
 

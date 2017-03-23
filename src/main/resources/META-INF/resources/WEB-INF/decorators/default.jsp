@@ -22,18 +22,6 @@
 <link rel="stylesheet" href="../views/code_assist/bootstrap.css">
 </c:if>
 
-<style>
-	tr, td {
-		text-transform: capitalize;
-	}
-	.text {
-		width : 90%;
-		margin : auto;
-		white-space : nowrap;
-		text-overflow : ellipsis;
-	}
-</style>
-
 <sitemesh:write property="head"/>
 
 </head>
@@ -81,7 +69,7 @@
 			</div>
 		</div>
 	</nav>
-	<div class="text">
+	<div class="container">
 		<sitemesh:write property="body"/>
 	</div>
 

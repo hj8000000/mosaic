@@ -22,11 +22,17 @@
 	a {
 		color: black;
 	}
-	header {
-		margin: 50px 10px;
-	}
 	.text-center {
-		margin : 30px auto;
+		margin :30px auto;
+		white-space : nowrap;
+		text-overflow : ellipsis;
+	}
+	tr, td {
+		text-transform: capitalize;
+	}
+	.headTR {
+		background-color: black;
+		color: gold;
 	}
 </style>
 
@@ -39,7 +45,7 @@
 
 <div class="text-center table-responsive">
 	<table class="table">
-		<tr class="info">
+		<tr class="headTR">
 			<td>No.</td>
 			<td>empno</td>
 			<td>ename</td>
@@ -71,22 +77,22 @@
 
 	<c:choose>
 	<c:when test="${paging.firstGroup == true}">
-		<a href="/emp/page/${paging.firstPage}" class="alert alert-warning">&laquo;</a>
+		<a href="/emp/page/${paging.firstPage}" class="btn btn-warning btn-sm">&laquo;</a>
 	</c:when>
 	<c:when test="${paging.firstGroup == false}">
-		<a href="/emp/page/${paging.firstPage - 1}" class="alert alert-warning">&laquo;</a>
+		<a href="/emp/page/${paging.firstPage - 1}" class="btn btn-warning btn-sm">&laquo;</a>
 	</c:when>
 	</c:choose>
 	<c:forEach var="i" begin="${paging.firstPage}" end="${paging.lastPage}">
-		<a href="/emp/page/${i}">${i}</a>
+		<a href="/emp/page/${i}" class="btn btn-group-sm active">${i}</a>
 	</c:forEach>
 	
 	<c:choose>
 	<c:when test="${paging.lastGroup == true}">
-		<a href="/emp/page/${paging.lastPage}"class="alert alert-warning">&raquo;</a>
+		<a href="/emp/page/${paging.lastPage}"class="btn btn-warning btn-sm">&raquo;</a>
 	</c:when>
 	<c:when test="${paging.lastGroup == false}">
-		<a href="/emp/page/${paging.lastPage + 1}"class="alert alert-warning">&raquo;</a>
+		<a href="/emp/page/${paging.lastPage + 1}"class="btn btn-warning btn-sm">&raquo;</a>
 	</c:when>
 	</c:choose>
 
