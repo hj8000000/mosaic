@@ -115,9 +115,7 @@ public class CityMapperTests {
 	
 	@Test
 	public void test05_updateById() {
-		City city = new City();
-		city.setId(4120);
-		city.setName("html");
+		City city = cityMapper.selectById(4120);
 		city.setDistrict("yyy");
 		city.setCountryCode("KOR");
 		

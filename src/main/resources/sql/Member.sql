@@ -11,6 +11,13 @@ CREATE TABLE Member (
 	UNIQUE (userid, email)
 );
 
+drop sequence MemberSrl_Seq;
+create 	sequence MemberSrl_Seq 
+		start with 3;
+
 insert into Member values( 1, 'admin', 'admin@noreply.com', 'Admin', '5f4dcc3b5aa765d61d8327deb882cf99', 'Y' );
+insert into Member values( 2, 'user', 'user@noreply.com', 'User', '5f4dcc3b5aa765d61d8327deb882cf99', 'N' );
+
+commit;
 
 select count(*) from Member;

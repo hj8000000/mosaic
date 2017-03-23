@@ -17,7 +17,7 @@
 </c:if>
 
 <style>
-	.registerBox {
+	.modifyBox {
 		width: 180px;
 		height: 300px;
 		margin: 50px auto;
@@ -26,7 +26,7 @@
 		text-align: center;
 		margin: 50px auto;
 	}
-	.registerButton {
+	.modifyButton {
 		margin: 50px auto;
 		text-align: right;
 	}
@@ -34,10 +34,16 @@
 
 </head>
 <body>
-<h1>City 등록</h1>
-<form:form action="/city/register" method="post" modelAttribute="cityForm">
+<h1>City 수정</h1>
+<form:form action="/city/modify" method="post" modelAttribute="cityForm">
 
-	<div class="registerBox">
+	<div class="modifyBox">
+		<!-- id -->
+		<div>
+			<label for="id"><span class="glyphicon glyphicon-pencil"></span>
+			Id</label><br>
+			<form:input path="id" readonly="true"/>
+		</div>
 		<!-- name -->
 		<div>
 			<label for="name"><span class="glyphicon glyphicon-pencil"></span>
@@ -69,9 +75,10 @@
 			<form:input path="population"/>
 			<form:errors path="population"/>
 		</div>
-		<div class="registerButton">
-			<input type="submit" value="City 등록">	
+		<div class="modifyButton">
+			<input type="submit" value="City 수정">	
 		</div>
+		<a href="/city/page/${param.pageNo}">목록으로</a>
 	</div>
 
 </form:form>

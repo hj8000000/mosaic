@@ -34,7 +34,6 @@
 		background-color: black;
 		color: gold;
 	}
-
 </style>
 
 </head>
@@ -58,14 +57,18 @@
 			<td>country_code</td>
 			<td>district</td>
 			<td>population</td>
+			<td></td>
+			<td></td>
 		</tr>
 	<c:forEach var="city" items="${citys}">
 		<tr>
 			<td>${city.id}</td> 
-			<td><a href="/city/item/${city.id}?pageNo=${paging.pageNo}">${city.name}</a></td> 
+			<td><a href="/city/item/${city.id}?pageNo=${paging.pageNo}"><span class="glyphicon glyphicon-hand-right"></span> ${city.name}</a></td> 
 			<td>${city.countryCode}</td>
 			<td>${city.district}</td>
 			<td>${city.population}</td>
+			<td><a href="/city/modify/${city.id}?pageNo=${paging.pageNo}"><span class="glyphicon glyphicon-edit"></span></a></td>
+			<td><a href="/city/unregister/${city.id}"><span class="glyphicon glyphicon-remove"></span></a></td>
 		</tr>
 		</c:forEach>
 	</table>

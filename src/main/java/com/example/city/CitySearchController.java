@@ -21,6 +21,7 @@ import com.example.exception.NotFoundRuntimeException;
 public class CitySearchController {
 	
 	static Log log = LogFactory.getLog(CitySearchController.class);
+	
 	@Autowired
 	CitySearchService citySearchService;
 	
@@ -28,7 +29,7 @@ public class CitySearchController {
 	public String getList(Model model) {
 		log.info("getList()");
 		
-		List<City> list = citySearchService.getListAll(true);
+		List<City> list = citySearchService.getListAll();
 		model.addAttribute("citys", list);
 		
 		return "city/list";

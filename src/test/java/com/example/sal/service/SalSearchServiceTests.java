@@ -62,7 +62,7 @@ public class SalSearchServiceTests {
 	
 	@Test
 	public void test03_getSalBySalno() {
-		Sal sal = salSearchService.getSalBySalno(11);
+		Sal sal = salSearchService.getSalBySalno(15);
 		System.out.println(sal);
 	}
 	@Test

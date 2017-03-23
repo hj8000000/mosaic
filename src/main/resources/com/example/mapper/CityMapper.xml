@@ -51,6 +51,7 @@
 	  from city c1 left outer join country c2
 	    on c1.country_code = c2.code
 	 where c1.country_code = 'KOR'
+	 order by id
 </select>
 
 <select id="selectPageWithCountry" resultMap="cityWithCountry">

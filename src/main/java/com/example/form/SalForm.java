@@ -9,6 +9,16 @@ import javax.validation.constraints.Size;
 import com.example.domain.Sal;
 
 public class SalForm extends Sal{
+	
+	public void setSal(Sal sal) {
+		super.setSalno(sal.getSalno());
+		super.setBasicSal(sal.getBasicSal());
+		super.setOvertimeSal(sal.getOvertimeSal());
+		super.setComm(sal.getComm());
+		super.setAidSal(sal.getAidSal());
+		super.setSaldate(sal.getSaldate());
+		super.setMembersrl(sal.getMembersrl());
+	}
 
 	@NotNull
 	@Digits(integer=5, fraction=2)

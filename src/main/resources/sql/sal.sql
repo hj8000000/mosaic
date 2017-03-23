@@ -18,12 +18,12 @@ insert into sal values (sal_salno_seq.nextval, 600, null, null, null, 20, 1);
 insert into sal values (sal_salno_seq.nextval, 700, null, null, null, 20, 1);
 insert into sal values (sal_salno_seq.nextval, 800, null, null, null, 20, 1);
 insert into sal values (sal_salno_seq.nextval, 900, null, null, null, 20, 1);
-insert into sal values (sal_salno_seq.nextval, 100, null, null, null, 20, 1);
-insert into sal values (sal_salno_seq.nextval, 200, null, null, null, 20, 1);
-insert into sal values (sal_salno_seq.nextval, 300, null, null, null, 20, 1);
-insert into sal values (sal_salno_seq.nextval, 400, null, null, null, 20, 1);
-insert into sal values (sal_salno_seq.nextval, 500, null, null, null, 20, 1);
+insert into sal values (sal_salno_seq.nextval, 100, null, null, null, 20, 2);
+insert into sal values (sal_salno_seq.nextval, 200, null, null, null, 20, 2);
+insert into sal values (sal_salno_seq.nextval, 300, null, null, null, 20, 2);
+insert into sal values (sal_salno_seq.nextval, 400, null, null, null, 20, 2);
+insert into sal values (sal_salno_seq.nextval, 500, null, null, null, 20, 2);
 insert into sal values (sal_salno_seq.nextval, 600, null, null, null, 20, 1);
-insert into sal values (sal_salno_seq.nextval, 700, null, null, null, 20, 1);
+insert into sal values (sal_salno_seq.nextval, 700, null, null, null, 20, 2);
 
 commit;

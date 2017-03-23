@@ -19,7 +19,8 @@ public class SiteMeshConfig {
 				builder.addDecoratorPath("/city/*", "/WEB-INF/decorators/default.jsp");
 				builder.addDecoratorPath("/dept/*", "/WEB-INF/decorators/default.jsp");
 				builder.addDecoratorPath("/emp/*", "/WEB-INF/decorators/default.jsp");
-//				builder.addDecoratorPath("/xxx/*", "/WEB-INF/decorators/default.jsp");
+				builder.addDecoratorPath("/sal/*", "/WEB-INF/decorators/default.jsp");
+				builder.addDecoratorPath("/Admin*", "/WEB-INF/decorators/default.jsp");
 			}
 		});
 //		filter.addUrlPatterns("/*");

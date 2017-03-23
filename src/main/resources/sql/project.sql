@@ -175,7 +175,7 @@ offset 1 * 10 row
  
  select * from city where country_code = 'KOR';
  
- select * from city where id >= 4100;
+ select * from city where id = 4120;
  
   update city
  	set name			= 'xxx', 
