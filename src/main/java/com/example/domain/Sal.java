@@ -12,7 +12,7 @@ public class Sal {
 	private BigDecimal overtimeSal;
 	private BigDecimal comm;
 	private BigDecimal aidSal;
-	private int saldate;
+	private Integer saldate;
 	private BigDecimal membersrl;
 	
 	private Member member;
@@ -83,11 +83,11 @@ public class Sal {
 		this.aidSal = aidSal;
 	}
 
-	public int getSaldate() {
+	public Integer getSaldate() {
 		return saldate;
 	}
 
-	public void setSaldate(int saldate) {
+	public void setSaldate(Integer saldate) {
 		this.saldate = saldate;
 	}
 

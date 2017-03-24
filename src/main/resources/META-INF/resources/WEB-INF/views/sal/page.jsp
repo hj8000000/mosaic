@@ -46,6 +46,9 @@
 
 <h1>Salary Page.No = ${paging.pageNo}</h1>
 
+<a href="/sal/register/${sal.salno}?pageNo=${pageNo}" class="btn btn-info">
+<span class="glyphicon glyphicon-inbox"></span>Sal 등록</a>
+
 <div class="text-center table-responsive">
 	<table class="table">
 		<tr class="headTR">
@@ -56,6 +59,8 @@
 			<td>aid Salary</td>
 			<td>salary Date</td>
 			<td>member_Srl</td>
+			<td></td>
+			<td></td>
 		</tr>
 	<c:forEach var="sal" items="${sals}">
 		<tr>
@@ -67,6 +72,10 @@
 			<td>${sal.saldate}</td>
 			<td><a href="/sal/item/${sal.salno}?pageNo=${paging.pageNo}">
 			<span class="glyphicon glyphicon-hand-right"></span> ${sal.membersrl}</a></td>
+			<td><a href="/sal/modify/${sal.salno}?pageNo=${paging.pageNo}">
+				<span class="glyphicon glyphicon-edit"></span></a></td>
+			<td><a href="/sal/unregister/${sal.salno}?pageNo=${paging.pageNo}">
+				<span class="glyphicon glyphicon-remove"></span></a></td>
 		</tr>
 	</c:forEach>
 	</table>

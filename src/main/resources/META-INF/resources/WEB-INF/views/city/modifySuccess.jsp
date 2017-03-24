@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>registerSuccess.jsp</title>
+<title>modifySuccess.jsp</title>
 
 <!-- Code Assist -->
 <c:if test="false">
@@ -17,7 +17,7 @@
 
 </head>
 <body>
-<h1>City 등록 성공입니다.</h1>
+<h1>City 수정 성공입니다.</h1>
 <div class="text-center table-responsive">
 <table class="table table-bordered">
 	<tr class="danger">

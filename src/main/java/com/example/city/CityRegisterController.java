@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.city.service.CityRegisterService;
 import com.example.city.service.CitySearchService;
 import com.example.domain.City;
+import com.example.domain.Country;
 import com.example.form.CityForm;
 
 @Controller
@@ -30,6 +31,7 @@ public class CityRegisterController {
 	@Autowired
 	CityRegisterService cityRegisterService;
 	
+	
 	@GetMapping("/register")		//양식을 받고(forward)
 	public String registerForm(CityForm cityForm) {
 		log.info("registerForm()");
@@ -38,7 +40,7 @@ public class CityRegisterController {
 	}
 	
 	@PostMapping("/register")		//제출~DB동작까지
-	public String register(@Valid CityForm cityForm, BindingResult errors) {
+	public String register(@Valid CityForm cityForm, BindingResult errors, Integer pageNo) {
 		log.info("register(" + cityForm + ")");
 		System.out.println(cityForm);
 		
@@ -52,7 +54,7 @@ public class CityRegisterController {
 			return "city/registerForm";
 		}
 		
-		return "redirect:/city/registerSuccess/" + cityForm.getId();
+		return "redirect:/city/registerSuccess/" + cityForm.getId() + "?pageNo=" + pageNo;
 	}
 	
 	@GetMapping("/registerSuccess/{id}")

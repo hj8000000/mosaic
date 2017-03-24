@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>registerForm.jsp</title>
+<title>modifyForm.jsp</title>
 
 <!-- Code Assist -->
 <c:if test="false">
@@ -17,6 +17,15 @@
 </c:if>
 
 <style>
+	a:HOVER {
+		text-decoration: none;	
+	}
+	a {
+		color: white;
+	}
+	.btn-sm {
+		background-color: black;
+	}
 	.modifyBox {
 		width: 180px;
 		height: 300px;
@@ -30,12 +39,18 @@
 		margin: 50px auto;
 		text-align: right;
 	}
+	.preButton {
+		width: 600px;
+		height: 10px;
+		margin: 0 auto;
+		text-align: right;
+	}
 </style>
 
 </head>
 <body>
 <h1>City 수정</h1>
-<form:form action="/city/modify" method="post" modelAttribute="cityForm">
+<form:form action="/city/modify?pageNo=${param.pageNo}" method="post" modelAttribute="cityForm">
 
 	<div class="modifyBox">
 		<!-- id -->
@@ -77,8 +92,11 @@
 		</div>
 		<div class="modifyButton">
 			<input type="submit" value="City 수정">	
-		</div>
-		<a href="/city/page/${param.pageNo}">목록으로</a>
+		</div>		
+	</div>
+	<div class="preButton">
+		<a class="btn btn-sm"href="/city/page/${param.pageNo}">
+		<span class="glyphicon glyphicon-arrow-left"></span> City Page</a>
 	</div>
 
 </form:form>

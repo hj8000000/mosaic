@@ -59,7 +59,7 @@
 			<td>${sal.comm}</td>
 			<td>${sal.aidSal}</td>
 			<td>${sal.saldate}</td>
-			<td>${sal.membersrl}</a></td>
+			<td>${sal.membersrl}</td>
 		</tr>
 	</c:forEach>	
 	</table>

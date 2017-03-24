@@ -45,7 +45,7 @@
 <h1>City Page pageNo=${paging.pageNo}</h1>
 
 
-<a href="/city/register" class="btn btn-success btn-sm">
+<a href="/city/register/${city.id}?pageNo=${paging.pageNo}" class="btn btn-success btn-sm">
 <span class="glyphicon glyphicon-inbox"></span> City Register</a>
 
 
@@ -67,8 +67,10 @@
 			<td>${city.countryCode}</td>
 			<td>${city.district}</td>
 			<td>${city.population}</td>
-			<td><a href="/city/modify/${city.id}?pageNo=${paging.pageNo}"><span class="glyphicon glyphicon-edit"></span></a></td>
-			<td><a href="/city/unregister/${city.id}"><span class="glyphicon glyphicon-remove"></span></a></td>
+			<td><a href="/city/modify/${city.id}?pageNo=${paging.pageNo}">
+				<span class="glyphicon glyphicon-edit"></span></a></td>
+			<td><a href="/city/unregister/${city.id}?pageNo=${paging.pageNo}">
+				<span class="glyphicon glyphicon-remove"></span></a></td>
 		</tr>
 		</c:forEach>
 	</table>

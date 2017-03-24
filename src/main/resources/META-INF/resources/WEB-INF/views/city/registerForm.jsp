@@ -17,6 +17,15 @@
 </c:if>
 
 <style>
+	a:HOVER {
+		text-decoration: none;	
+	}
+	a {
+		color: white;
+	}
+	.btn-sm {
+		background-color: black;
+	}
 	.registerBox {
 		width: 180px;
 		height: 300px;
@@ -30,12 +39,18 @@
 		margin: 50px auto;
 		text-align: right;
 	}
+	.preButton {
+		width: 600px;
+		height: 10px;
+		margin: 0 auto;
+		text-align: right;
+	}
 </style>
 
 </head>
 <body>
 <h1>City 등록</h1>
-<form:form action="/city/register" method="post" modelAttribute="cityForm">
+<form:form action="/city/register?pageNo=${param.pageNo}" method="post" modelAttribute="cityForm">
 
 	<div class="registerBox">
 		<!-- name -->
@@ -72,6 +87,10 @@
 		<div class="registerButton">
 			<input type="submit" value="City 등록">	
 		</div>
+	</div>
+	<div class="preButton">
+		<a class="btn btn-sm"href="/city/page/${param.pageNo}">
+		<span class="glyphicon glyphicon-arrow-left"></span> City Page</a>
 	</div>
 
 </form:form>

@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>registerSuccess.jsp</title>
+<title>unregisterSuccess.jsp</title>
 
 <!-- Code Assist -->
 <c:if test="false">
@@ -17,22 +17,14 @@
 
 </head>
 <body>
-<h1>City 등록 성공입니다.</h1>
+<h1>City 삭제 성공입니다.</h1>
 <div class="text-center table-responsive">
 <table class="table table-bordered">
 	<tr class="danger">
-		<td>id</td>
-		<td>name</td>
-		<td>countryCode</td>
-		<td>district</td>
-		<td>population</td>
+		<td>삭제된 City ID</td>
 	</tr>
 	<tr>
-		<td>${city.id}</td>
-		<td>${city.name}</td>
-		<td>${city.countryCode == null ? 'null' : city.countryCode}</td>
-		<td>${city.district == null ? 'null' : city.district}</td>
-		<td>${city.population == null ? 'null' : city.population}</td>
+		<td>${id}</td>
 	</tr>
 </table>
 <a href="/city/page/${param.pageNo}">City Page로</a>

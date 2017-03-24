@@ -48,7 +48,7 @@
 						<ul class="dropdown-menu">
 							<li><a href="/dept/list">Dept</a></li>
 							<li><a href="/emp/list">Emp</a></li>
-							<li><a href="/emp/salgrade">Salgrade</a></li>
+							<li><a href="/sal/page/1">Sal</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">

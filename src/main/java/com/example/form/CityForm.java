@@ -35,6 +35,7 @@ public class CityForm extends City {
 		super.setName(name);
 	}
 	
+	@NotNull
 	@Size(max=3)
 	@Override
 	public String getCountryCode() {
@@ -72,8 +73,6 @@ public class CityForm extends City {
 
 	@Override
 	public void setPopulation(BigDecimal population) {
-		if (population.equals(""))
-			population = null;
 		super.setPopulation(population);
 	}
 
