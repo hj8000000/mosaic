@@ -34,6 +34,7 @@
 		   m.isadmin		as member_isadmin
 	  from sal s left outer join member m
 	    on s.membersrl = m.membersrl
+	 order by s.salno
 </select>
 
 <select id="selectPageWithMember" resultMap="SalWithMember">
@@ -51,6 +52,7 @@
 		   m.isadmin		as member_isadmin
 	  from sal s left outer join member m
 	    on s.membersrl = m.membersrl
+	 order by s.salno
 	offset #{firstItem} - 1 rows
 	 fetch next #{itemsPerPage} rows only
 </select>

@@ -10,7 +10,7 @@ import com.example.mapper.MemberMapper;
 import com.example.mapper.SalMapper;
 
 @Service
-public class SalRegisterService {
+public class SalModifyService {
 	
 	@Autowired
 	SalMapper salMapper;
@@ -18,16 +18,15 @@ public class SalRegisterService {
 	@Autowired
 	MemberMapper memberMapper;
 	
-	public void register(Sal sal, BindingResult errors) {
-		
-		if (sal.getMembersrl() != null) {
-			
+	public void modify(Sal sal, BindingResult errors) {
+		if (sal.getMembersrl() != null){
 			Member member = memberMapper.selectByMembersrl(sal.getMembersrl());
 			if (member == null)
 				errors.reject("InvalidMemberSrl", "유효하지 않은 Member_Serial 입니다.");
 		}
 		
-		if(!errors.hasErrors())
-			salMapper.insert(sal);
+		if (!errors.hasErrors())
+			salMapper.updateBySalno(sal);
 	}
+	
 }

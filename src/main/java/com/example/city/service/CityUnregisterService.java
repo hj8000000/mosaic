@@ -13,7 +13,7 @@ public class CityUnregisterService {
 	
 	public void unregister(int id) {
 		
-			cityMapper.deleteById(id);
+		cityMapper.deleteById(id);
 		
 	}
 }

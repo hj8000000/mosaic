@@ -2,13 +2,13 @@
     pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>    
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>  
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>  
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>registerForm.jsp</title>
+<title>modifyForm.jsp</title>
 
 <!-- Code Assist -->
 <c:if test="false">
@@ -26,7 +26,7 @@
 	.btn-sm {
 		background-color: black;
 	}
-	.registerBox {
+	.modifyBox {
 		width: 180px;
 		height: 380px;
 		margin: 50px auto;
@@ -35,27 +35,30 @@
 		text-align: center;
 		margin: 50px auto;
 	}
-	.registerButton {
+	.modifyButton {
 		margin: 50px auto;
 		text-align: right;
 	}
 	.preButton {
-		width: 700px;
+		width: 600px;
 		height: 10px;
 		margin:  auto;
 		text-align: right;
-	}
-	label,input {
-		margin-bottom: 10px;
 	}
 </style>
 
 </head>
 <body>
-<h1>Sal 등록</h1>
-
-<form:form action="/sal/register?pageNo=${param.pageNo}" method="post" modelAttribute="salForm">
-	<div class="registerBox">
+<h1>Sal 수정</h1>
+<form:form action="/sal/modify?pageNo=${param.pageNo}" method="post" modelAttribute="salForm">
+	<div class="modifyBox">
+		<!-- salno -->
+		<div>
+			<label for="salno">
+			<span class="glyphicon glyphicon-pencil"></span>
+			sal_No</label>
+			<form:input path="salno" readonly="true"/>
+		</div>
 		<!-- basicSal -->
 		<div>
 			<label for="basicSal">
@@ -104,12 +107,10 @@
 			<form:input path="membersrl"/>
 			<form:errors path="membersrl"/>
 		</div>
-		<div>
-			<form:errors/>
-		</div> 
-		<div class="registerButton">
-			<input class="btn btn-info" type="submit" value="Sal 등록">	
+		<div class="modifyButton">
+			<input type="submit" value="Sal 수정">	
 		</div>
+	
 	</div>
 	
 	<div class="preButton">
@@ -118,6 +119,5 @@
 	</div>
 	
 </form:form>
-
 </body>
 </html>

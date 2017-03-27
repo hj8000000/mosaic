@@ -51,11 +51,13 @@
 <body>
 <h1>City 수정</h1>
 <form:form action="/city/modify?pageNo=${param.pageNo}" method="post" modelAttribute="cityForm">
-
+                            
 	<div class="modifyBox">
+	
 		<!-- id -->
 		<div>
-			<label for="id"><span class="glyphicon glyphicon-pencil"></span>
+			<label for="id">
+			<span class="glyphicon glyphicon-pencil"></span>
 			Id</label><br>
 			<form:input path="id" readonly="true"/>
 		</div>
@@ -92,8 +94,10 @@
 		</div>
 		<div class="modifyButton">
 			<input type="submit" value="City 수정">	
-		</div>		
+		</div>	
+			
 	</div>
+	
 	<div class="preButton">
 		<a class="btn btn-sm"href="/city/page/${param.pageNo}">
 		<span class="glyphicon glyphicon-arrow-left"></span> City Page</a>

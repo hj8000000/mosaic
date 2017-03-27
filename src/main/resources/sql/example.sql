@@ -173,6 +173,9 @@ select count(*) from city;
  
 
 delete from country; 
+
+select * from sal where salno=30;
+
 	
    
 	   

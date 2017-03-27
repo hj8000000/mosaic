@@ -11,11 +11,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.city.service.CityModifyService;
-import com.example.city.service.CityRegisterService;
 import com.example.city.service.CitySearchService;
 import com.example.domain.City;
 import com.example.form.CityForm;
