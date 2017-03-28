@@ -43,8 +43,8 @@ public class CountryRegisterServiceTests {
 		CountryForm countryForm = new CountryForm();
 		BindingResult errors = new BeanPropertyBindingResult(countryForm, "countryForm");
 		
-		countryForm.setCode("XYZ");
-		countryForm.setName("java");
+		countryForm.setCode("XYD");
+		countryForm.setName("STS");
 		
 		validator.validate(countryForm, errors);
 		if (errors.hasErrors()) {

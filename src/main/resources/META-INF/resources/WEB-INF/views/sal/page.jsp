@@ -59,8 +59,7 @@
 			<td>aid Salary</td>
 			<td>salary Date</td>
 			<td>member_Srl</td>
-			<td></td>
-			<td></td>
+			<td colspan="2"></td>
 		</tr>
 	<c:forEach var="sal" items="${sals}">
 		<tr>

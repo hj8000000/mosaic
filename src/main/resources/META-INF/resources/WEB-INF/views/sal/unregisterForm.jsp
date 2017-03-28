@@ -1,13 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>    
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>modifySuccess.jsp</title>
+<title>unregisterForm.jsp</title>
 
 <!-- Code Assist -->
 <c:if test="false">
@@ -15,40 +16,9 @@
 	<link rel="stylesheet" href="../code_assist/bootstrap.css">
 </c:if>
 
-<style type="text/css">
-	a:HOVER {
-		text-decoration: none;	
-	}
-	a {
-		color: white;
-	}
-	.btn-sm {
-		background-color: black;
-	}
-	.registerBox {
-		width: 180px;
-		height: 380px;
-		margin: 50px auto;
-	}
-	h1 { 
-		text-align: center;
-		margin: 50px auto;
-	}
-	.registerButton {
-		margin: 50px auto;
-		text-align: right;
-	}
-	.preButton {
-		width: 900px;
-		height: 10px;
-		margin: 50px auto;
-		text-align: right;
-	}
-</style>
-
 </head>
 <body>
-<h1>Sal 수정 성공입니다.</h1>
+<h1>Salary 삭제</h1>
 <div class="text-center table-responsive">
 	<table class="table table-bordered">
 		<tr class="danger">
@@ -71,9 +41,10 @@
 		</tr>
 	</table>
 </div>
-	<div class="preButton">
-		<a class="btn btn-sm" href="/sal/page/${param.pageNo}">
-		<span class="glyphicon glyphicon-arrow-left"></span> Sal Page</a>
-	</div>
+<div class="unregisterButton">
+	<form action="/sal/unregister/${salno}?pageNo=${param.pageNo}" method="post">
+		<input class="btn btn-warning" type="submit" value="sal삭제">
+	</form>
+</div>
 </body>
 </html>

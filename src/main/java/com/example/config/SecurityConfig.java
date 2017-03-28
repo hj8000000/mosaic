@@ -27,10 +27,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		 */
 		http.csrf().disable()
 			.authorizeRequests()
-			.antMatchers("/country/**").hasRole("ADMIN")
+//			.antMatchers("/country/**").hasRole("ADMIN")
 //			.antMatchers("/city/**").hasRole("ADMIN")
+			.antMatchers("/city/register/").hasRole("ADMIN")
+			.antMatchers("/city/modify/**").hasRole("ADMIN")
+			.antMatchers("/city/unregister/**").hasRole("ADMIN")
 			.and()
 			.formLogin()
+				.loginPage("/login")			//내가 만든 페이지를 쓸 수 있도록 해줌 (default login page 가 아닌)
 			.permitAll();
 		
 	}

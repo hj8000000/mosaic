@@ -176,6 +176,8 @@ delete from country;
 
 select * from sal where salno=30;
 
+select * from country where code='KOR';
+
 	
    
 	   

@@ -76,7 +76,7 @@
 			<td>${sal.comm == null ? 'null' : sal.comm}</td>
 			<td>${sal.aidSal == null ? 'null' : sal.aidSal}</td>
 			<td>${sal.saldate == null ? 'null' : sal.saldate}</td>
-			<td>${sal.membersrl == null ? 'null' : sal.membersrl}</td>
+			<td>${sal.membersrl}</td>
 		</tr>
 	</table>
 </div>
