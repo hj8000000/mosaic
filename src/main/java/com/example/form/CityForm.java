@@ -30,7 +30,7 @@ public class CityForm extends City {
 
 	@Override
 	public void setName(String name) {
-		if (name.equals(""))
+		if (name.equals(""))		//String 은 web에서 null로 넘어가는 게 아니라 nullString 으로 넘어가기 때문에 null로 넘어갈 수 있게 해주기
 			name = null;
 		super.setName(name);
 	}

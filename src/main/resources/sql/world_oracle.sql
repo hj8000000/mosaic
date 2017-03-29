@@ -22,21 +22,21 @@ create sequence city_id_seq start with 4080;
  * Country
  */
 create table country (
-	code 			char(3 char),						
-	name 			char(52 char)	not null,						
-	continent		char(20 char),		
-	region			char(26 char),						
+	code 			varchar2(3 char),						
+	name 			varchar2(52 char)	not null,						
+	continent		varchar2(20 char),		
+	region			varchar2(26 char),						
 	surface_area	number(10,2),		
 	indep_year		number(6),							
 	population		number(11),			
 	life_expectancy	number(3,1),						
 	gnp				number(10,2),
 	gnp_old			number(10,2),
-	local_name		char(45 char),						
-	government_form	char(45 char),
-	head_of_state	char(60 char),
+	local_name		varchar2(45 char),						
+	government_form	varchar2(45 char),
+	head_of_state	varchar2(60 char),
 	capital			number(11),
-	code2			char(2  char),
+	code2			varchar2(2  char),
 	constraint ck_continent check (continent in ('Asia','Europe','North America','Africa','Oceania','Antarctica','South America')),
 	constraint pk_country primary key (code)
 );
@@ -46,9 +46,9 @@ create table country (
  */
 create table city (
 	id				number(11),
-	name			char(35 char) not null,
-	country_code 	char(3 char),
-	district		char(20 char),
+	name			varchar2(35 char) not null,
+	country_code 	varchar2(3 char),
+	district		varchar2(20 char),
 	population		number(11),
 	constraint pk_city primary key (id),
 	constraint fk_country foreign key (country_code) references country(code) on delete cascade 

@@ -1,0 +1,13 @@
+@CHARSET "EUC-KR";
+
+.Define-Values {
+	width: 200px;
+}
+
+.Define-Input-Box {
+	width: 400px;
+}
+
+.Define-Error-Region {
+	color: red;
+}

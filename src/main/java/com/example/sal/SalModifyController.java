@@ -31,10 +31,12 @@ public class SalModifyController {
 	SalModifyService salModifyService;
 	
 	@GetMapping("/modify/{salno}")
-	public String modifyForm(SalForm salForm, @PathVariable int salno) {
+	public String modifyForm(SalForm salForm, @PathVariable int salno, Model model) {
 		log.info("modifyForm(" + salno + ")");
 		Sal sal = salSearchService.getSalBySalno(salno);
 		salForm.setSal(sal);
+		
+		model.addAttribute("sal", salForm);
 		
 		return "sal/modifyForm";
 	}

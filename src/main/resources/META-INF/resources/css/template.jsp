@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>loginForm.jsp</title>
+<title>template.jsp</title>
 <!-- 1. animate -->
 <link rel="stylesheet" href="/webjars/animate.css/3.5.2/animate.min.css">
 <!-- 2. bootstrap -->
@@ -22,42 +22,9 @@
 	<link rel="stylesheet" href="../code_assist/animate.css">
 	<link rel="stylesheet" href="../code_assist/bootstrap.css">
 </c:if>
-<style>
-	.loginBox {
-		width: 400px;
-		margin: 250px auto;
-		padding: 20px; 
-		border: 3px solid black;
-		border-radius: 20px;
-		text-align: center;
-		
-	}
-
-</style>
 
 </head>
 <body>
-
-<form action="/login" method="post">
-<div class="loginBox">
-<h2>Login을 해주세요.</h2>
-	<div>
-		<label>UserName</label>
-		<input type="text" name="username"/>
-	</div>
-	<div>
-		<label>Password</label>
-		<input type="password" name="password"/>
-	</div>
-	<div>
-		<input type="submit" value="login"/>
-	</div>
-	
-	
-</div>
-
-
-</form>
 
 </body>
 </html>

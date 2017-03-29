@@ -59,6 +59,9 @@
 		<form:input path="code"/>
 		<form:errors path="code"/>	
 	</div>
+	<div>
+		<form:errors/>
+	</div> 
 	<!-- name -->
 	<div>
 		<label for="name"><span class="glyphicon glyphicon-pencil"></span>
@@ -70,7 +73,15 @@
 	<div>
 		<label for="continent"><span class="glyphicon glyphicon-pencil"></span>
 		Continent</label><br>
-		<form:input path="continent"/>
+		<form:select path="continent">
+			<form:option value="Asia"/>
+			<form:option value="Europe"/>
+			<form:option value="North America"/>
+			<form:option value="Africa"/>
+			<form:option value="Oceania"/>
+			<form:option value="Antarctica"/>
+			<form:option value="South America"/>
+		</form:select>
 		<form:errors path="continent"/>	
 	</div>
 	<!-- region -->
@@ -150,13 +161,6 @@
 		<form:input path="capital"/>
 		<form:errors path="capital"/>	
 	</div>
-	<!-- code -->
-	<div>
-		<label for="code"><span class="glyphicon glyphicon-pencil"></span>
-		Country code</label><br>
-		<form:input path="code"/>
-		<form:errors path="code"/>	
-	</div>
 	<!-- code2 -->
 	<div>
 		<label for="code2"><span class="glyphicon glyphicon-pencil"></span>
@@ -164,7 +168,14 @@
 		<form:input path="code2"/>
 		<form:errors path="code2"/>	
 	</div>
-	
+	<!-- register Button -->
+	<div class="registerButton">
+		<input type="submit" value="Country 등록">	
+	</div>
+	<div class="preButton">
+		<a class="btn btn-sm"href="/country/page/${param.pageNo}">
+		<span class="glyphicon glyphicon-arrow-left"></span> Country Page</a>
+	</div>
 
 </form:form>
 

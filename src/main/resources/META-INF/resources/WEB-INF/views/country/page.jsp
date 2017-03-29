@@ -52,7 +52,7 @@
 <span class="glyphicon glyphicon-inbox"></span> Country Register</a>
 
 <div class="text-center table-responsive">
-	<table class="table table-hover">
+	<table class="table">
 		<tr class="headTR">
 			<td colspan="2"></td>
 			<td>No.</td>
@@ -74,10 +74,10 @@
 		</tr>
 	<c:forEach var="c" items="${countrys}" varStatus="status">
 		<tr>
-			<td><a href="/country/modify/${country.code}?pageNo=${paging.pageNo}">
-				<span class="glyphicon glyphicon-edit"></span></a></td>
-			<td><a href="/country/unregister/${country.code}?pageNo=${paging.pageNo}">
+			<td><a href="/country/unregister/${c.code}?pageNo=${paging.pageNo}">
 				<span class="glyphicon glyphicon-remove"></span></a></td>
+			<td><a href="/country/modify/${c.code}?pageNo=${paging.pageNo}">
+				<span class="glyphicon glyphicon-edit"></span></a></td>
 			<td><b>${status.index + 1}</b></td>
 			<td>${c.code}</td> 
 			<td><a href="/country/item/${c.code}?pageNo=${paging.pageNo}">${c.name}</a></td>

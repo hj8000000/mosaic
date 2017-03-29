@@ -84,6 +84,7 @@
 			<form:input path="population"/>
 			<form:errors path="population"/>
 		</div>
+		<!-- register Button -->
 		<div class="registerButton">
 			<input type="submit" value="City 등록">	
 		</div>

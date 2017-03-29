@@ -95,8 +95,9 @@
 		<div>
 			<label for="saldate">
 			<span class="glyphicon glyphicon-pencil"></span>
-			Salary Date</label>
-			<form:input path="saldate"/>
+			Salary Date</label><br>
+			<form:radiobutton path="saldate" value="10" label="non_regular/10" checked="${sal.saldate eq '10' ? 'checked' : ''}"/><br>
+			<form:radiobutton path="saldate" value="20" label="regular/20" checked="${sal.saldate eq '10' ? '' : 'checked'}"/>
 			<form:errors path="saldate"/>
 		</div>
 		<!-- membersrl -->

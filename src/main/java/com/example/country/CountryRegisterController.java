@@ -37,7 +37,7 @@ public class CountryRegisterController {
 		return "country/registerForm";
 	}
 	
-	@PostMapping("/resgister")
+	@PostMapping("/register")
 	public String register(@Valid CountryForm countryForm, BindingResult errors, Integer pageNo) {
 		log.info("register(" + countryForm + ")");
 		System.out.println(countryForm);
