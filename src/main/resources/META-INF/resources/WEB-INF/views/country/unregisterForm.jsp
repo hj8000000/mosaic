@@ -28,11 +28,44 @@
 <h1>Country 삭제</h1>
 <div class="text-center table-responsive">
 	<table class="table table-bordered">
-	
+		<tr class="danger">
+			<td>code</td>
+			<td>name</td>
+			<td>continent</td>
+			<td>region</td>
+			<td>surfaceArea</td>
+			<td>indepYear</td>
+			<td>population</td>
+			<td>lifeExpectancy</td>
+			<td>gnp</td>
+			<td>gnpOld</td>
+			<td>localName</td>
+			<td>governmentForm</td>
+			<td>headOfState</td>
+			<td>capital</td>
+			<td>code2</td>
+		</tr>
+		<tr>
+			<td>${country.code}</td> 
+			<td>${country.name}</td>
+			<td>${country.continent == null? 'null' : country.continent}</td>
+			<td>${country.region == null? 'null' : country.region}</td>
+			<td>${country.surfaceArea == null? 'null' : country.surfaceArea}</td>
+			<td>${country.indepYear == null? 'null' : country.indepYear}</td>
+			<td>${country.population == null? 'null' : country.population}</td>
+			<td>${country.lifeExpectancy == null? 'null' : country.lifeExpectancy}</td> 
+			<td>${country.gnp == null? 'null' : country.gnp}</td> 
+			<td>${country.gnpOld == null? 'null' : country.gnpOld}</td> 
+			<td>${country.localName == null? 'null' : country.localName}</td> 
+			<td>${country.governmentForm == null? 'null' : country.governmentForm}</td> 
+			<td>${country.headOfState == null? 'null' : country.headOfState}</td> 
+			<td>${country.capital == null? 'null' : country.capital}</td> 
+			<td>${country.code2 == null? 'null' : country.code2}</td>
+		</tr>
 	</table>
 </div>
 <div class="unregisterButton">
-	<form action="/country/unregister/${id}?pageNo=${param.pageNo}" method="post">
+	<form action="/country/unregister/${code}?pageNo=${param.pageNo}" method="post">
 		<input class="btn btn-warning" type="submit" value="country 삭제">
 	</form>
 </div>

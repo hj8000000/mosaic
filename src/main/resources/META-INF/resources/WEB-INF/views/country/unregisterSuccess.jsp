@@ -19,15 +19,16 @@
 <body>
 <h1>Country 삭제 성공입니다.</h1>
 <div class="text-center table-responsive">
-<table class="table table-bordered">
-	<tr class="danger">
-		<td>삭제된 Country Code</td>
-	</tr>
-	<tr>
-		<td>${code}</td>
-	</tr>
-</table>
-<a href="/country/page/${param.pageNo}">City Page로</a>
+	<table class="table table-bordered">
+		<tr class="danger">
+			<td>삭제된 Country Code</td>
+		</tr>
+		<tr>
+			<td>${code}</td>
+		</tr>
+	</table>
+	</table>
+<a href="/country/page/${param.pageNo}">Country Page로</a>
 </div>
 </body>
 </html>

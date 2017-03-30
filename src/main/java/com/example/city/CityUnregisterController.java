@@ -44,7 +44,7 @@ public class CityUnregisterController {
 	}
 	
 	@GetMapping("/unregisterSuccess/{id}")
-	public String modifySuccess(@PathVariable int id, Model model) {
+	public String unregisterSuccess(@PathVariable int id, Model model) {
 		model.addAttribute("id", id);
 		return "city/unregisterSuccess";
 	}
